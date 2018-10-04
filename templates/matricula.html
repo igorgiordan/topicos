@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>English Team</title>
+<style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color:#F3F781;
+}
+  .top{
+  text-align: center;
+  color: #FFFFFF;
+  background-image: url("https://i.ytimg.com/vi/QZgksvdLP1U/maxresdefault.jpg");
+  text-shadow: 4px 3px 0px #7A7A7A;
+}
+
+.menu {
+  background-image: url("https://i.ytimg.com/vi/QZgksvdLP1U/maxresdefault.jpg");
+  margin: auto;
+  border: 3px dashed #0404B4;
+  padding: 10px;
+  text-align: center;
+}
+.menu button{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0088ff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#e6e637 0%,
+		#ffffff 50%,
+		#d6d6d6);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#e6e637),
+		color-stop(0.50, #ffffff),
+		to(#d6d6d6));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 3px solid #e6ac0e;
+	-moz-box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	text-shadow:
+		0px -1px 0px rgba(37,14,204,0.1),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+.info{
+  text-align: center;
+  color: #0404B4;
+}
+
+.mensagem{
+	border: 3px dashed #0404B4;
+	margin: auto;
+	padding: 10px;
+	background-image: url("https://i.ytimg.com/vi/QZgksvdLP1U/maxresdefault.jpg");
+	height: 350px;
+	width: 200px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+  <div class="top">
+      <h1>ENGLISH TEAM</h1>
+      <h2>O melhor curso de inglês para crianças!</h2>
+  </div>
+<div class="menu">
+    <button><a href="{% url 'english:home'%}">Voltar</a></button>
+</div>
+<br>
+<div class="mensagem">
+<form method="POST">
+{% csrf_token %}
+<input name="user" value="{{request.user.pk}}" hidden>
+<p><label for="id_nome">Nome:</label> <input type="text" name="nome" required id="id_nome"></p>
+<p><label for="id_pai">Pai:</label> <input type="text" name="pai" required id="id_pai"></p>
+<p><label for="id_mae">Mãe:</label> <input type="text" name="mae" required id="id_mae"></p>
+<p><label for="id_contato">Contato:</label> <input type="text" name="contato" required id="id_contato"></p>
+<p><label for="id_datanascimento">Data de Nacimento:</label> <input type="date"  name="datanascimento" required id="id_datanascimento"></p>
+<button type="submit">Cadastrar</button>
+</form>
+</div>
+</body>
+</html>

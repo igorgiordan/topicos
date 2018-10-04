@@ -1,0 +1,125 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>English Team</title>
+<style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color:#F3F781;
+}
+.menu {
+  background-image: url("https://i.ytimg.com/vi/QZgksvdLP1U/maxresdefault.jpg");
+  margin: auto;
+  border: 3px dashed #0404B4;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+.top{
+  text-align: center;
+  color: #FFFFFF;
+  background-image: url("https://i.ytimg.com/vi/QZgksvdLP1U/maxresdefault.jpg");
+  text-shadow: 4px 3px 0px #7A7A7A;
+}
+.menu button{
+  
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0088ff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#e6e637 0%,
+		#ffffff 50%,
+		#d6d6d6);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#e6e637),
+		color-stop(0.50, #ffffff),
+		to(#d6d6d6));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 3px solid #e6ac0e;
+	-moz-box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	box-shadow:
+		0px 1px 3px rgba(27,143,124,0.5),
+		inset 0px 0px 3px rgba(112,58,112,1);
+	text-shadow:
+		0px -1px 0px rgba(37,14,204,0.1),
+		0px 1px 0px rgba(255,255,255,1);
+}
+.info{
+  text-shadow: 2px 1px 0px #7A7A7A;
+  text-align: center;
+  color: #0404B4;
+}
+
+.alerta2{
+  display: none;
+}
+
+.info img{
+  border-radius: 100px;
+}
+</style>
+</head>
+<body>
+  <div class="top">
+      <h1>ENGLISH TEAM</h1>
+      <h2>O melhor curso de inglês para crianças!</h2>
+  </div>
+  <img  id="alerta" src="https://www.unja.ac.id/wp-content/uploads/2017/05/menu_icon.png" height="50" width="50">
+  <img  id="teste" class="alerta2" src="https://www.unja.ac.id/wp-content/uploads/2017/05/menu_icon.png" height="50" width="50">
+  <div id="menu" class="menu">
+    <button onclick="location.href='sobre/';">Sobre</button>
+    <button onclick="location.href='roteiro/';">Roteiro</button>
+    <button onclick="location.href='contato/';">Contato</button>
+    {%if user.is_authenticated %}
+    <button onclick="location.href='matricula/';">Matricule um novo aluno!</button>
+    <button onclick="location.href='accounts/logout/';">Sair</button>
+    {%else%}
+    <button onclick="location.href='accounts/login/';">Login</button>
+    <button onclick="location.href='cadastro/';">Cadastre-se</button>
+    {%endif%}
+  </div>
+  <div class="info">
+    <br>
+    <img src="https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLyV0LDG99vcQiILdmNhcmRfcGhvdG8qKDU2MzUyNzJlNWI1ZGE1M2IyOTc3YzgyYTYyNjE2YzRhYmRhMmI4YTEwAUoOyDZ_in3364BpIW7h1tl0FDU3?sz=128"  height="150" width="150">
+    <h1>Professor Ígor Giordan</h1>
+    <h2>Ipaumirim - Ceará</h2>
+  </div>
+  <div class="top">
+    <img src="http://www.dhuhaschools.com/wp-content/uploads/2016/04/center-image-1024x356.png">
+  </div>
+
+  <script>
+    butao=document.getElementById('alerta');
+    butao.onclick = menubutao
+    menu=document.getElementById('menu')
+    butao2=document.getElementById('teste');
+    butao2.onclick = deactivate
+    
+    function menubutao(){
+      butao.style.display='none';
+      menu.style.display='block';
+      butao2.style.display ='block';
+    }
+
+    
+    function deactivate(){
+      butao.style.display='block';
+      menu.style.display='none';
+      butao2.style.display ='none';
+    }
+
+  
+  </script>
+</body>
+</html>
